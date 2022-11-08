@@ -1,0 +1,33 @@
+# 1 "/home/mochizuki12/program_test/opencv_test.cpp"
+# 1 "/home/mochizuki12/program_test//"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 1 "<command-line>" 2
+# 1 "/home/mochizuki12/program_test/opencv_test.cpp"
+const char* windowName = "Image";
+
+ cv::VideoCapture cap(0);
+ if(!cap.isOpened())
+ {
+  return -1;
+ }
+
+ while (1)
+ {
+  cv::Mat img;
+  cap >> img;
+
+
+
+  cv::imshow(windowName, img);
+
+  int key = cv::waitKey(1);
+  if (key == 113)
+  {
+   break;
+  }
+ }
+ cv::destroyAllWindows();
+
+ return(0);
